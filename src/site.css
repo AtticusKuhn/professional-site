@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@source "../index.html";
+
+html { scroll-behavior: smooth; }
+
+@layer components {
+  .nav-link { @apply transition-colors hover:text-[#24302f] focus-visible:underline; }
+  .text-link { @apply underline decoration-[#aeb9ae] underline-offset-4 transition-colors hover:text-[#627867] hover:decoration-[#627867]; }
+  .cv-section { @apply grid gap-4 border-b border-[#d9dcd4] py-6 sm:py-8 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8; }
+  .section-heading { @apply font-serif text-3xl tracking-tight sm:text-4xl; }
+  .section-content { @apply min-w-0 space-y-4; }
+  .entry { @apply min-w-0; }
+  .entry-heading { @apply flex flex-wrap items-baseline justify-between gap-x-5 gap-y-1; }
+  .entry-heading h3 { @apply max-w-[600px] font-semibold leading-snug; }
+  .entry-heading span { @apply shrink-0 text-sm text-[#748178]; }
+  .cv-list { @apply mt-2 list-disc space-y-1 pl-5 text-[15px] leading-relaxed text-[#4e5a53] sm:text-base; }
+  .cv-list li { @apply pl-1; }
+  .cv-list li::marker { color: #8da496; }
+  .gallery-photo { @apply aspect-[4/5] w-full bg-[#e6e7df] object-cover; }
+  .contact-link { @apply flex items-center justify-between gap-3 border-b border-[#b9c3b8] pb-3 transition-colors hover:text-[#627867]; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
